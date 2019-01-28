@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "outDir": "./build",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "lib": [
+      "dom",
+      "es2016",
+      "esnext.asynciterable"
+    ]
+  }
+}
