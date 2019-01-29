@@ -6,10 +6,10 @@
     "rootDir": "./src",
     "esModuleInterop": true,
     "sourceMap": true,
-    "lib": [
-      "dom",
-      "es2016",
-      "esnext.asynciterable"
-    ]
-  }
+    "lib": ["dom", "es2016", "esnext.asynciterable"],
+  },
+  "include": [
+    "./src/**/*",
+    "./index.d.ts"
+  ]
 }

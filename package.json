@@ -7,14 +7,25 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "apollo-datasource-rest": "^0.2.2",
+    "apollo-server": "^2.3.2",
     "dotenv": "^6.2.0",
+    "graphql": "^14.1.1",
     "json-server": "^0.14.2"
   },
   "devDependencies": {
+    "@types/graphql": "^14.0.5",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.9",
+    "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "typescript": "^3.2.4"
   },
   "scripts": {
-    "start-json-server": "json-server --watch db.json -p 5000"
+    "start-json-server": "json-server --watch db.json -p 5000",
+    "start-dev": "TS_NODE_FILES=true node --inspect -r ts-node/register src/index.ts",
+    "dev": "concurrently \"npm:start-json-server\" \"nodemon\"",
+    "start": "node build/index.js",
+    "build": "tsc"
   }
 }
