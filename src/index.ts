@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { ApolloServer, gql } from 'apollo-server';
+import { ApolloServer } from 'apollo-server';
 import { typeDefs } from './typeDefs';
 import { resolvers } from './resolvers';
 import Post from './data/Post';
@@ -13,6 +13,7 @@ import Photos from './data/Photo';
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: true,
   dataSources: () => ({
     Post: new Post(),
     User: new User(),
@@ -22,6 +23,6 @@ const server = new ApolloServer({
   }),
 });
 
-server.listen(5001).then(({ url }) => {
+server.listen(process.env.PORT || 5001).then(({ url }) => {
   console.log(`GraphQL playground: ${url}`); // tslint:disable-line
 });
