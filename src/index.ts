@@ -7,6 +7,8 @@ import { resolvers } from './resolvers';
 import Post from './data/Post';
 import User from './data/User';
 import Comment from './data/Comment';
+import Album from './data/Album';
+import Photos from './data/Photo';
 
 const server = new ApolloServer({
   typeDefs,
@@ -15,6 +17,8 @@ const server = new ApolloServer({
     Post: new Post(),
     User: new User(),
     Comment: new Comment(),
+    Albums: new Album(),
+    Photos: new Photos(),
   }),
 });
 

@@ -8,6 +8,8 @@ export const resolvers = {
     users: (_, __, { dataSources }) => dataSources.User.getUsers(),
     comments: (_, { postId }, { dataSources }) =>
       dataSources.Comment.getComments(postId),
+    albums: (_, { userId }, { dataSources }) =>
+      dataSources.Albums.getAlbums(userId),
   },
   Mutation: {
     post: (_, { userId, title, body }, { dataSources }) =>
@@ -28,5 +30,9 @@ export const resolvers = {
   Post: {
     comments: ({ id }, _, { dataSources }) =>
       dataSources.Comment.getComments(id),
+  },
+  Album: {
+    thumbnail: ({ id }, _, { dataSources }) => dataSources.Photos.getFirstThumbnail(id),
+    photos: ({ id }, _, { dataSources }) => dataSources.Photos.getPhotos(id),
   },
 };

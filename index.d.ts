@@ -44,3 +44,17 @@ interface IUser {
     bs: string;
   };
 }
+
+interface IAlbum {
+  userId: number;
+  id: number;
+  title: string;
+}
+
+interface IPhoto {
+  userId: number;
+  id: number;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
+}

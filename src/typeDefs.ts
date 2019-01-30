@@ -44,6 +44,22 @@ export const typeDefs = gql`
     bs: String!
   }
 
+  type Album {
+    userId: Int!
+    id: Int!
+    title: String!
+    thumbnail: String!
+    photos: [Photos!]!
+  }
+
+  type Photos {
+    userId: Int!
+    id: Int!
+    title: String!
+    url: String!
+    thumbnailUrl: String!
+  }
+
   type User {
     id: Int!
     name: String!
@@ -63,6 +79,7 @@ export const typeDefs = gql`
     user(id: Int!): User!
     users: [User!]!
     comments: [Comment!]!
+    albums(userId: Int!): [Album!]!
   }
 
   type Mutation {
