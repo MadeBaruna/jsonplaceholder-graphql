@@ -80,6 +80,7 @@ export const typeDefs = gql`
     users: [User!]!
     comments: [Comment!]!
     albums(userId: Int!): [Album!]!
+    album(albumId: Int!): Album!
   }
 
   type Mutation {

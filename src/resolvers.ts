@@ -10,6 +10,8 @@ export const resolvers = {
       dataSources.Comment.getComments(postId),
     albums: (_, { userId }, { dataSources }) =>
       dataSources.Albums.getAlbums(userId),
+    album: (_, { albumId }, { dataSources }) =>
+      dataSources.Albums.getAlbum(albumId),
   },
   Mutation: {
     post: (_, { userId, title, body }, { dataSources }) =>
